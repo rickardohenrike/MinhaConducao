@@ -1,74 +1,103 @@
-// Initialize Firebase
+
+  // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyDff0I1c_o5gsyU7ybUhTjHesL3c34msSU",
-    authDomain: "minha-conducao.firebaseapp.com",
-    databaseURL: "https://minha-conducao.firebaseio.com",
-    projectId: "minha-conducao",
-    storageBucket: "minha-conducao.appspot.com",
-    messagingSenderId: "114511218724"
+    apiKey: "AIzaSyDdh1mvOsKN881Ziwz7Cyzbr0v7xUtx1B8",
+    authDomain: "minha-conducao-oficial.firebaseapp.com",
+    databaseURL: "https://minha-conducao-oficial.firebaseio.com",
+    projectId: "minha-conducao-oficial",
+    storageBucket: "minha-conducao-oficial.appspot.com",
+    messagingSenderId: "463274889663"
   };
   firebase.initializeApp(config);
-  
-  
-  function listarContatos(){
-	  firebase.database().ref("contatos")
-	  .on("value", function(snapshot){
-		
-var html ="";
 
-snapshot.forEach(function(child){
-	html += '<tr>'+
-		'<td>'+child.val().nome+'</td>'+
-		'<td>'+child.val().telefone+'</td>'+
-		'<td class="hidden-xs" >'+child.val().email+'</td>'+
-		'<td><a href="editar.html" class="btn btn-info"><i class="fas fa-edit"></i></a></td>'+
-		'<td><button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>'+
-		'</tr>';
-		
-	
-	
-	
-});		
-		  
-		$("#tblConteudo").html(html);  
-		  
-	  });
-	  
-	  
-  }
-  
-  listarContatos(); 
-  
-  
-  function cadastrarContato (){
 
-	  var nome = $("#nome").val();
-	  var telefone = $("#telefone").val();
-	  var email = $("#email").val();
-	  
-	  var contato = {
-		nome: nome,
-telefone: telefone,
-email: email		
-		  
-		  
-	  };
-	  
-	  firebase.database()
-	  .ref("contatos")
-	  .push(contato)
-	  .then(function(result){ 
-		alert("Cadastro Realizado com Sucesso!"); 
-		console.log(result);
-		location.href="Contatos.html";
-		})
-	  
-	  
-	  .catch(function(error){
-		  alert("Erro ao Cadastrar"); 
-		console.log(error.message);
-		
-	  });
-	 
-	  
+
+
+function cadastre_se() {
+
+  var email = $("#email").val();
+  var senha = $("#senha").val();
+
+  if (email == "" && senha == "") {
+  	alert("Preeencha os campos corretamente!");
+  	return false;
   }
+
+  firebase.auth().createUserWithEmailAndPassword(email, senha)
+    .then(function(user){
+
+      alert('Usuário criado com sucesso!');
+      $('#formLogin').trigger('reset');
+
+    })
+    .catch(function(error){
+
+      alert('Erro ao criar usuário. Tente com outro E-Mail e use senha com 6 dígitos!');
+      console.log("Erro: " + error.message)
+
+    });
+
+}
+
+function logar() {
+
+	var email = $("#email").val();
+	var senha = $("#senha").val();
+
+	firebase.auth().signInWithEmailAndPassword(email, senha)
+	.then(function(user){
+
+		localStorage.setItem("user_id", user.uid);
+      	localStorage.setItem("user_email", user.email);
+
+	  	location.href = "listar.html";
+
+	})
+	.catch(function(error){
+
+	  alert('Usuário ou Senha Inválido!');
+	  console.log("Erro: " + error.message)
+
+	});
+
+}
+
+function logarComGoogle() {
+
+	var provedor = new firebase.auth.GoogleAuthProvider();
+
+	firebase.auth().signInWithPopup(provedor)
+    .then(function(result){
+
+      localStorage.setItem("user_id", result.user.uid);
+      localStorage.setItem("user_email", result.user.email);
+
+      location.href = "listar.html";
+
+    })
+    .catch(function(error){
+
+      console.log(error.message);
+      alert("Erro na Autenticação com o Google");
+
+    });
+
+}
+
+function logoff() {
+
+  firebase.auth().signOut();
+
+  localStorage.removeItem("user_id");
+  localStorage.removeItem("user_email");
+
+  location.href = "index.html";
+
+}
+
+
+
+
+
+
+
