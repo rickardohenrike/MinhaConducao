@@ -1,0 +1,42 @@
+Motorista 
+	Cadastrar Responsavel 
+		Nome do responsável
+		Telefone
+		Endereço
+		E-mail
+		Nome do Aluno
+		Data de nascimento do aluno
+		Endereço da escola
+	Lista dos Estudantes
+		Nome do estudante
+		Data de Nascimento
+		Endereço
+		Endereço da Escola 
+
+	Lista dos Responsaveis
+		Nome do responsavel
+		Telefone
+		E-mail
+		Endereço
+
+	Minhas Rotas
+		Nome do aluno	
+		Endereço da escola 
+		Endereço do Aluno
+		Check Box para presença
+		Status da viagem (Em viagem,entregue casa, entregue escola)
+
+Pais
+	Inicio
+		Descrição do sistema
+		Link para Status de viagem
+	
+	Status da Viagem
+		Status
+		Link para localização do motorista, caso o status esteja em viagem
+		Contato do Motorista 
+		
+	Localização do Motorista
+		Mapa com a localização do motorista
+		
+	
