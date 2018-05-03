@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-    <title>Inicio</title>
 
-   
+    <title>Agenda</title>
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
- 
+
   </head>
   <body>
+
 <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -35,34 +34,49 @@
       </div>
     </nav>
 
-     
-   
-  
-    
-  
-  <div  class="container">
 
-  <br> <br><center><h1> Bem vindo ao sistema monitor de transporte escolar <br> Minha Condução</h1></center>
-  
-  
-  <center> 
-   <img src=_imagens/VANZINHA.png></center>
-   
-   <div class="row">
-   <div class="col-md-4"></div>
-   <div class="col-md-4">
-   
-   </div>
-  
-   </div>
-   <div class="col-md-4"></div>
-   
-   </div>
-   
-  
+    <div class="container">
+      
+      <h1>Editar Contato do Estudante</h1>
+
+      <form>
+        
+		  
+		   <div class="form-group">
+          <label for="nomeest">Nome do Estudante</label>
+          <input autofocus type="text" id="nomeest" class="form-control" required>
+        </div> 
+		
+		     <div class="form-group">
+          <label for="datanasc">Data de Nascimento do Estudante</label>
+          <input type="data" id="datanasc" class="form-control" required>
+        </div>
+
+		  <div class="form-group">
+          <label for="escola">Escola</label>
+          <input autofocus type="text" id="escola" class="form-control" required>
+        </div> 
+       
+
+        <div class="form-group">
+          <a href="listar.html" class="btn btn-default">Cancelar</a>
+          <button type="button" onclick="confirmarEditarContatoEstudante()" class="btn btn-primary">Enviar</button>
+        </div>
+
+      </form>
+
+    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/contatos.js"></script>
+    <script>
+      obterContatoEstudante();
+    </script>
+
   </body>
 </html>

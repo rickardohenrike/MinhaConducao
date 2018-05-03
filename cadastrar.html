@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Agenda</title>
+    <title>Cadastrar Responsável</title>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
   </head>
   <body>
 
-    <nav class="navbar navbar-inverse">
+   <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -21,56 +21,65 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <a class="navbar-brand" href="inicio.html">Inicio</a>
+        <a class="navbar-brand" href="inicio.html">Inicio</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="listar.html">Estudantes</a></li>
             <li><a href="cadastrar.html">Cadastrar</a></li>
-			<li><a href="localizacao.html">Localização</a></li>
+			<li><a href="minhasrotas.html">Minhas Rotas</a></li>
             <li><a href="#" onclick="logoff()">Sair</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
+
     <div class="container">
       
-      <h1>Cadastrar Estudante</h1>
+      <h1>Cadastrar Responsável</h1>
 
       <form>
         
         <div class="form-group">
-          <label for="nome">Nome</label>
+          <label for="nome">Nome do Responsável</label>
           <input autofocus type="text" id="nome" class="form-control" required>
         </div>
 
         <div class="form-group">
-          <label for="telefone">Telefone</label>
+          <label for="telefone">Telefone do Responsável</label>
           <input type="tel" id="telefone" class="form-control" required>
         </div>
 
         <div class="form-group">
-          <label for="email">E-Mail</label>
+          <label for="email">E-Mail do Responsável</label>
           <input type="email" id="email" class="form-control" required>
         </div>
 		
-		  <h1>Informações do Responsável</h1>
+		   <div class="form-group">
+          <label for="endereco">Endereço do Estudante</label>
+          <input autofocus type="text" id="endereco" class="form-control" required>
+        </div>
+
+		
+		
+		  <h1>Informações do Estudante</h1>
 		  
 		   <div class="form-group">
-          <label for="nome">Nome do Responsável</label>
-          <input autofocus type="text" id="nomeresp" class="form-control" required>
+          <label for="nomeest">Nome do Estudante</label>
+          <input autofocus type="text" id="nomeest" class="form-control" required>
         </div> 
 		
 		     <div class="form-group">
-          <label for="telefone">Telefone do Responsável</label>
-          <input type="tel" id="telefoneresp" class="form-control" required>
+          <label for="datanasc">Data de Nascimento do Estudante</label>
+          <input type="data" id="datanasc" class="form-control" required>
         </div>
 
-        <div class="form-group">
-          <label for="email">E-Mail do Responsável</label>
-          <input type="email" id="emailresp" class="form-control" required>
-        </div>
+		  <div class="form-group">
+          <label for="escola">Escola</label>
+          <input autofocus type="text" id="escola" class="form-control" required>
+        </div> 
+       
 		
 
         <div class="form-group">

@@ -11,8 +11,7 @@
 
   </head>
   <body>
-
-    <nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -21,13 +20,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Agenda</a>
+        <a class="navbar-brand" href="inicio.html">Inicio</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="listar.html">Contatos</a></li>
+            <li><a href="listar.html">Estudantes</a></li>
             <li><a href="cadastrar.html">Cadastrar</a></li>
-			<li><a href="localizacao.html">Localização</a></li>
+			<li><a href="minhasrotas.html">Minhas Rotas</a></li>
             <li><a href="#" onclick="logoff()">Sair</a></li>
           </ul>
         </div>
@@ -55,24 +54,15 @@
           <input type="email" id="email" class="form-control" required>
         </div>
 		
-			   <div class="form-group">
-          <label for="nome">Nome do Responsável</label>
-          <input autofocus type="text" id="nomeresp" class="form-control" required>
-        </div> 
-		
-		     <div class="form-group">
-          <label for="telefone">Telefone do Responsável</label>
-          <input type="tel" id="telefoneresp" class="form-control" required>
+		   <div class="form-group">
+          <label for="endereco">Endereço do Estudante</label>
+          <input autofocus type="text" id="endereco" class="form-control" required>
         </div>
 
-        <div class="form-group">
-          <label for="email">E-Mail do Responsável</label>
-          <input type="email" id="emailresp" class="form-control" required>
-        </div>
-		
+        
 
         <div class="form-group">
-          <a href="listar.html" class="btn btn-default">Cancelar</a>
+          <a href="listarresponsavel.html" class="btn btn-default">Cancelar</a>
           <button type="button" onclick="confirmarEditarContato()" class="btn btn-primary">Enviar</button>
         </div>
 
