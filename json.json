@@ -1,29 +1,43 @@
 {
-    "estudantes": {
-      "id": {
-        "Nome": "Nome da Pessoa",
-        "Endereço": "Rua muito engraçada",
-        "Telefone": "9",
-        "Nome do responsável": "Nome do responsável",
-        "Data de nascimento": "01/01/2001"
-      }
-    },
-    "motoristas": {
-      "id": {
-        "Nome": "Nome do motorista",
-        "Telefone": "1",
-        "Localicação": {
-          "id": {
-            "x": "123",
-            "y": "456"
+  "Motoristas": {
+    "01": {
+      "Email": "emaildomotorista",
+      "Nome": "nome do motorista",
+      "Telefone": "telefone do moto",
+      "Rotas": {
+        "0630": {
+          "Estudantes": {
+            "01": {
+              "Destino": "endereço da escola",
+              "Endereco": "address",
+              "Nome": "nome do estudante",
+              "NomedoResponsavel": "nome do responsavel"
+            }
+          },
+          "Localizacao": {
+            "x": "valor de x",
+            "y": "valor de y"
           }
         },
-        "estudantes": {
-          "id": {
-            "Nome": "Nome da criança",
-            "Nome do responsável": "Nome do responsável"
-          }
-        }
+        "Status": [
+          "em viagem",
+          "entregue em casa",
+          "entregue na escola"
+        ]
       }
     }
+  },
+  "Responsavel": {
+    "Email": "email",
+    "Endereco": "address",
+    "Estudante": {
+      "id": {
+        "DatadeNascimento": "data",
+        "Destino": "endereço da escola",
+        "Nome": "nome de outro estudante do mesmo responsável"
+      }
+    },
+    "Nome": "cicrano",
+    "Telefone": "tel"
   }
+}
