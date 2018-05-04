@@ -17,27 +17,27 @@
           "Localizacao": {
             "x": "valor de x",
             "y": "valor de y"
-          }
-        },
-        "Status": [
-          "em viagem",
-          "entregue em casa",
-          "entregue na escola"
-        ]
+          },
+          "Status": [
+            "em viagem",
+            "entregue em casa",
+            "entregue na escola"
+          ]
+        }
       }
     }
   },
   "Responsavel": {
     "Email": "email",
     "Endereco": "address",
+    "Nome": "cicrano",
+    "Telefone": "tel",
     "Estudante": {
-      "id": {
+      "01": {
         "DatadeNascimento": "data",
         "Destino": "endereço da escola",
-        "Nome": "nome de outro estudante do mesmo responsável"
+        "Nome": "nome do estudante"
       }
-    },
-    "Nome": "cicrano",
-    "Telefone": "tel"
+    }
   }
 }
