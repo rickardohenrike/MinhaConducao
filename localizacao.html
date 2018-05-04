@@ -2,9 +2,10 @@
 <html>
   <head>
     <title>Localização da Van</title>
-       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    
     <style>
       
       #map {
@@ -17,9 +18,12 @@
         padding: 0;
       }
     </style>
+
   </head>
+
   <body>
-  <nav class="navbar navbar-inverse">
+
+    <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -28,13 +32,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="inicio.html">Inicio</a>
+          <a class="navbar-brand" href="inicio.html">Inicio</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="listar.html">Estudantes</a></li>
             <li><a href="cadastrar.html">Cadastrar</a></li>
-			<li><a href="minhasrotas.html">Minhas Rotas</a></li>
+			      <li><a href="minhasrotas.html">Minhas Rotas</a></li>
             <li><a href="#" onclick="logoff()">Sair</a></li>
           </ul>
         </div>
@@ -50,7 +54,6 @@
           zoom: 6
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
-
         
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {

@@ -1,0 +1,29 @@
+{
+    "estudantes": {
+      "id": {
+        "Nome": "Nome da Pessoa",
+        "Endereço": "Rua muito engraçada",
+        "Telefone": "9",
+        "Nome do responsável": "Nome do responsável",
+        "Data de nascimento": "01/01/2001"
+      }
+    },
+    "motoristas": {
+      "id": {
+        "Nome": "Nome do motorista",
+        "Telefone": "1",
+        "Localicação": {
+          "id": {
+            "x": "123",
+            "y": "456"
+          }
+        },
+        "estudantes": {
+          "id": {
+            "Nome": "Nome da criança",
+            "Nome do responsável": "Nome do responsável"
+          }
+        }
+      }
+    }
+  }

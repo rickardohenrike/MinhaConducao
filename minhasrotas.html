@@ -9,49 +9,6 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-  </head>
-  <body>
-
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        <a class="navbar-brand" href="inicio.html">Inicio</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="listar.html">Estudantes</a></li>
-            <li><a href="cadastrar.html">Cadastrar</a></li>
-			<li><a href="minhasrotas.html">Minhas Rotas</a></li>
-            <li><a href="#" onclick="logoff()">Sair</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container">
-      
-      <h1>Estudantes</h1>
-
-      <table class="table table-striped">
-        <tr>
-          <th>Nome do Estudante</th>
-          <th>Endereço</th>
-		  <th>Data de Nascimento</th>
-          <th>Escola</th>
-          <th>Responsável</th>
-		  <th></th>
-        </tr>
-        <tbody id="conteudoTabelaContatos"></tbody>
-      </table>
-
-    </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
@@ -62,5 +19,50 @@
       minhasrotas();
     </script>
 
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="inicio.html">Inicio</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="listar.html">Estudantes</a></li>
+              <li><a href="cadastrar.html">Cadastrar</a></li>
+              <li><a href="minhasrotas.html">Minhas Rotas</a></li>
+              <li><a href="#" onclick="logoff()">Sair</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+      
+      <h1>Estudantes</h1>
+
+      <table class="table table-striped">
+        <tr>
+          <th>Nome do Estudante</th>
+          <th>Endereço</th>
+		      <th>Data de Nascimento</th>
+          <th>Escola</th>
+          <th>Responsável</th>
+		      <th>Presença</th>
+        </tr>
+        <tbody id="conteudoTabelaContatos"></tbody>
+      </table>
+
+    </div>
+
   </body>
+
 </html>

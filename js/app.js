@@ -1,17 +1,14 @@
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDdh1mvOsKN881Ziwz7Cyzbr0v7xUtx1B8",
-    authDomain: "minha-conducao-oficial.firebaseapp.com",
-    databaseURL: "https://minha-conducao-oficial.firebaseio.com",
-    projectId: "minha-conducao-oficial",
-    storageBucket: "minha-conducao-oficial.appspot.com",
-    messagingSenderId: "463274889663"
-  };
-  firebase.initializeApp(config);
-
-
-
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDdh1mvOsKN881Ziwz7Cyzbr0v7xUtx1B8",
+  authDomain: "minha-conducao-oficial.firebaseapp.com",
+  databaseURL: "https://minha-conducao-oficial.firebaseio.com",
+  projectId: "minha-conducao-oficial",
+  storageBucket: "minha-conducao-oficial.appspot.com",
+  messagingSenderId: "463274889663"
+};
+firebase.initializeApp(config);
 
 function cadastre_se() {
 
@@ -24,18 +21,18 @@ function cadastre_se() {
   }
 
   firebase.auth().createUserWithEmailAndPassword(email, senha)
-    .then(function(user){
-
-      alert('Usuário criado com sucesso!');
-      $('#formLogin').trigger('reset');
-
-    })
-    .catch(function(error){
-
-      alert('Erro ao criar usuário. Tente com outro E-Mail e use senha com 6 dígitos!');
-      console.log("Erro: " + error.message)
-
-    });
+  .then(function(user){
+  
+    alert('Usuário criado com sucesso!');
+    $('#formLogin').trigger('reset');
+  
+  })
+  .catch(function(error){
+  
+    alert('Erro ao criar usuário. Tente com outro E-Mail e use senha com 6 dígitos!');
+    console.log("Erro: " + error.message)
+  
+  });
 
 }
 
@@ -46,12 +43,12 @@ function logar() {
 
 	firebase.auth().signInWithEmailAndPassword(email, senha)
 	.then(function(user){
-
+  
 		localStorage.setItem("user_id", user.uid);
-      	localStorage.setItem("user_email", user.email);
-
-	  	location.href = "listar.html";
-
+    localStorage.setItem("user_email", user.email);
+  
+    location.href = "listar.html";
+  
 	})
 	.catch(function(error){
 

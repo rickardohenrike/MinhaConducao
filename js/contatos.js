@@ -7,17 +7,17 @@ function listarContatos() {
 
     contatos.forEach(function(contato){
 
-    	html += '<tr>'+             
+      html += 
+        '<tr>'+             
 			  '<td>'+contato.val().nomeest+'</td>'+
 			  '<td>'+contato.val().endereco+'</td>'+			 
-              '<td>'+contato.val().datanasc+'</td>'+
-              '<td>'+contato.val().escola+'</td>'+
-                            '<td><a href="listarresponsavel.html" class="btn btn-default">Ir <span class="glyphicon glyphicon-search"></span></a></td>'+
-
+        '<td>'+contato.val().datanasc+'</td>'+
+        '<td>'+contato.val().escola+'</td>'+
+        '<td><a href="listarresponsavel.html" class="btn btn-default">Ir <span class="glyphicon glyphicon-search"></span></a></td>'+
 			  '<td><button onclick=\'editarContato("'+ contato.key +'")\' class="btn btn-warning" href="editarestudante.html"><span class="glyphicon glyphicon-pencil"></span></button></td>'+
-              '<td><button onclick=\'removerContato("'+ contato.key +'")\' class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>'+
-            '</tr>';
-
+        '<td><button onclick=\'removerContato("'+ contato.key +'")\' class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>'+
+        '</tr>';
+      
     });
 
     $("#conteudoTabelaContatos").html(html);
@@ -34,14 +34,15 @@ function listarContatosResponsavel() {
 
     contatos.forEach(function(contato){
 
-    	html += '<tr>'+             
+      html += 
+        '<tr>'+             
 			  '<td>'+contato.val().nome+'</td>'+
-              '<td>'+contato.val().telefone+'</td>'+
-              '<td class="hidden-xs">'+contato.val().email+'</td>'+
+        '<td>'+contato.val().telefone+'</td>'+
+        '<td class="hidden-xs">'+contato.val().email+'</td>'+
 			  '<td>'+contato.val().endereco+'</td>'+
 			  '<td><button onclick=\'editarContato("'+ contato.key +'")\' class="btn btn-warning" href="listarresponsavel.html"><span class="glyphicon glyphicon-pencil"></span></button></td>'+
-              '<td><button onclick=\'removerContato("'+ contato.key +'")\' class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>'+
-            '</tr>';
+        '<td><button onclick=\'removerContato("'+ contato.key +'")\' class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>'+
+        '</tr>';
 
     });
 
@@ -59,20 +60,20 @@ function minhasrotas() {
 
     contatos.forEach(function(contato){
 
-    	html += '<tr>'+             
+      html += 
+        '<tr>'+             
 			  '<td>'+contato.val().nomeest+'</td>'+
 			  '<td>'+contato.val().endereco+'</td>'+			 
-              '<td>'+contato.val().datanasc+'</td>'+
-              '<td>'+contato.val().escola+'</td>'+
-               '<td><a href="listarresponsavel.html" class="btn btn-default">Ir <span class="glyphicon glyphicon-search"></span></a></td>'+
-			'<td> <input type="checkbox" class="form-check-input" id="exampleCheck1"> <label class="form-check-label" for="exampleCheck1">Faltou</label></td>'+
-			 
-            '</tr>';
-
+        '<td>'+contato.val().datanasc+'</td>'+
+        '<td>'+contato.val().escola+'</td>'+
+        '<td><a href="listarresponsavel.html" class="btn btn-default">Ir <span class="glyphicon glyphicon-search"></span></a></td>'+
+			  '<td> <input type="checkbox" class="form-check-input" id="exampleCheck1"> <label class="form-check-label" for="exampleCheck1">Faltou</label></td>'+
+        '</tr>';
+    
     });
 
     $("#conteudoTabelaContatos").html(html);
-
+  
   });
 
 
@@ -82,7 +83,7 @@ function cadastrarContato() {
 	var telefone = $("#telefone").val();
 	var email = $("#email").val();
 	var endereco = $("#endereco").val();
-    var nomeest = $("#nomeest").val();
+  var nomeest = $("#nomeest").val();
 	var datanasc = $("#datanasc").val();
 	var escola = $("#escola").val();
 	
@@ -152,8 +153,7 @@ function obterContato() {
     $("#nome").val( contato.val().nome );
     $("#email").val( contato.val().email );
     $("#telefone").val( contato.val().telefone );
-	$("#endereco").val( contato.val().endereco );
-
+    $("#endereco").val( contato.val().endereco );
 
   });
 
@@ -164,19 +164,17 @@ function confirmarEditarContato() {
   var id_contato = localStorage.getItem("id_contato");
 
 	$("#nome").val( contato.val().nome );
-    $("#email").val( contato.val().email );
-    $("#telefone").val( contato.val().telefone );
+  $("#email").val( contato.val().email );
+  $("#telefone").val( contato.val().telefone );
 	$("#endereco").val( contato.val().endereco );
 	
 
   	var contato = {
-		
-		nome: nome,
-		telefone: telefone,
-		email: email,
-		endereco: endereco
-		
-  };
+      nome: nome,
+      telefone: telefone,
+      email: email,
+      endereco: endereco
+    };
 
   firebase.database().ref("contatos/"+id_contato).update(contato)
   .then(function(result){
@@ -205,12 +203,11 @@ function obterContatoEstudante() {
 
   firebase.database().ref("contatos/"+id_contato)
   .once("value", function(contato){
-
-   
-	$("#nomeest").val( contato.val().nomeest );
+  
+	  $("#nomeest").val( contato.val().nomeest );
     $("#datanasc").val( contato.val().datanasc );
     $("#escola").val( contato.val().escola );
-
+  
   });
 
 }
@@ -219,13 +216,11 @@ function confirmarEditarContatoEstudante() {
 
   var id_contato = localStorage.getItem("id_contato");
 
-    $("#nomeest").val( contato.val().nomeest );
-    $("#datanasc").val( contato.val().datanasc );
-    $("#escola").val( contato.val().escola );
+  $("#nomeest").val( contato.val().nomeest );
+  $("#datanasc").val( contato.val().datanasc );
+  $("#escola").val( contato.val().escola );
 
-  	var contato = {
-		
-		
+  var contato = {		
 		nomeest: nomeest,
 		datanasc: datanasc,
 		escola: escola
@@ -234,8 +229,8 @@ function confirmarEditarContatoEstudante() {
   firebase.database().ref("contatos/"+id_contato).update(contato)
   .then(function(result){
 
-      alert("Atualizado com Sucesso!");
-      location.href = "listar.html";
+    alert("Atualizado com Sucesso!");
+    location.href = "listar.html";
 
   })
   .catch(function(error){
